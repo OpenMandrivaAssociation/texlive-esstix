@@ -1,3 +1,9 @@
+# revision 22426
+# category Package
+# catalog-ctan /fonts/esstix
+# catalog-date 2011-05-10 11:05:00 +0200
+# catalog-license ofl
+# catalog-version 1.0
 Name:		texlive-esstix
 Version:	1.0
 Release:	1
@@ -127,6 +133,7 @@ double-struck (blackboard bold) in maths mode.
 %doc %{_texmfdistdir}/doc/fonts/esstix/Esstix.tex
 %doc %{_texmfdistdir}/doc/fonts/esstix/README
 %doc %{_texmfdistdir}/doc/fonts/esstix/esstixOther.map
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -137,3 +144,5 @@ double-struck (blackboard bold) in maths mode.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
