@@ -17,8 +17,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
 
 %description
 These fonts represent translation to PostScript Type 1 of the
@@ -28,20 +26,12 @@ accompanying virtual fonts with customized metrics and LaTeX
 support files allow their use as calligraphic, fraktur and
 double-struck (blackboard bold) in maths mode.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -134,7 +124,6 @@ double-struck (blackboard bold) in maths mode.
 %doc %{_texmfdistdir}/doc/fonts/esstix/Esstix.tex
 %doc %{_texmfdistdir}/doc/fonts/esstix/README
 %doc %{_texmfdistdir}/doc/fonts/esstix/esstixOther.map
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -145,5 +134,3 @@ double-struck (blackboard bold) in maths mode.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
