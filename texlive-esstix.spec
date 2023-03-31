@@ -1,6 +1,6 @@
 Name:		texlive-esstix
 Version:	22426
-Release:	1
+Release:	2
 Summary:	PostScript versions of the ESSTIX, with macro support
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/esstix
