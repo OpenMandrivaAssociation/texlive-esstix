@@ -3,7 +3,7 @@ Version:	22426
 Release:	2
 Summary:	PostScript versions of the ESSTIX, with macro support
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/fonts/esstix
+URL:		https://www.ctan.org/tex-archive/fonts/esstix
 License:	OFL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/esstix.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/esstix.doc.r%{version}.tar.xz
